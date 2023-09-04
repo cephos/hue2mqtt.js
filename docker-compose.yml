@@ -1,0 +1,7 @@
+version: "3.0"
+services:
+  hue2mqtt:
+  	build: .
+  	volumes:
+  	  - ~/.hue2mqtt:/root/.hue2mqtt
+  	command: "-b BRIDGE_IP -u mqtt://MQTT_IP -p 1 -d"
