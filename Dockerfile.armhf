@@ -4,6 +4,9 @@ COPY . /node
 
 WORKDIR /node
 
+RUN apt update && \
+    apt install git -y
+
 RUN npm install
 
 ENTRYPOINT [ "node", "index.js" ]
