@@ -2,7 +2,8 @@ FROM arm32v7/node:slim
 
 COPY . /node
 
-RUN cd /node && \
-	npm install
+WORKDIR /node
 
-ENTRYPOINT [ "node", "/node/index.js" ]
+RUN npm install
+
+ENTRYPOINT [ "node", "index.js" ]
